@@ -1,0 +1,234 @@
+:root {
+  /* Base Colors */
+  --clr-bg: #111212;
+  --clr-surface: #232328;
+  --clr-surface-20: rgba(35, 35, 40, 0.2);
+  --clr-surface-50: rgba(35, 35, 40, 0.5);
+  --clr-surface-80: rgba(35, 35, 40, 0.8);
+  --clr-disabled: rgb(23, 23, 26);
+  --clr-white-alpha: rgba(255, 255, 255, 0.1);
+  --clr-white: white;
+
+  /* Accent Colors */
+  --clr-accent-teal: #80deea;
+  --clr-accent-orange: #ee6611;
+  --clr-accent-green: #125607;
+  --clr-accent-purple: #b388e7;
+
+  /* Spacing */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px - base */
+  --space-5: 1.618rem; /* 26px */
+  --space-6: 2.618rem; /* 42px */
+  --space-7: 4.236rem; /* 68px */
+  --space-8: 6.854rem; /* 110px */
+
+  /* Border Radius */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+
+  /* other */
+  --height-header: 60px;
+  --padding-section: 20px;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-white);
+}
+
+header {
+  height: var(--height-header);
+  background-color: var(--clr-surface);
+}
+
+header,
+section {
+  padding: var(--padding-section);
+}
+
+/* UTILITY */
+.width-fill {
+  width: 100%;
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.col {
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.center {
+  text-align: center;
+}
+.square {
+  aspect-ratio: 1 / 1;
+}
+.circle {
+  aspect-ratio: 1 /1;
+  border-radius: 9999px;
+}
+*[aria-disabled="true"] {
+  display: none;
+}
+
+/* ELEMENTS */
+
+/* debugging */
+/* .game-board {
+  background-color: var(--clr-surface);
+  border-radius: var(--radius-sm);
+} */
+
+.control-btn {
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-white-alpha);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.control-btn:hover:not(:disabled) {
+  background-color: var(--clr-surface-80);
+}
+
+.control-btn:active:not(:disabled) {
+  background-color: var(--clr-surface-50);
+}
+
+.control-btn:disabled {
+  color: grey;
+  background-color: var(--clr-disabled);
+  cursor: not-allowed;
+}
+
+/* GAME */
+
+.game-screen {
+  height: calc(100svh - var(--height-header));
+  display: grid;
+  place-items: center;
+}
+
+.teal {
+  --clr-player: var(--clr-accent-teal);
+}
+.orange {
+  --clr-player: var(--clr-accent-orange);
+}
+.green {
+  --clr-player: var(--clr-accent-green);
+}
+.purple {
+  --clr-player: var(--clr-accent-purple);
+}
+.white {
+  --clr-player: var(--clr-white);
+}
+
+.player-score {
+  background-color: transparent;
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--clr-white-alpha);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  box-shadow: 0 2px var(--clr-white-alpha);
+
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.player-score:hover {
+  box-shadow: 0 3px var(--clr-white-alpha);
+}
+
+.player-score.selected {
+  box-shadow: 0 3px var(--clr-player, white), 0 2px 5px var(--clr-white-alpha);
+}
+
+.stat-display {
+  padding: var(--space-2) var(--space-5);
+  border-bottom: 2px solid var(--clr-white-alpha);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mode-toggle {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 1s ease;
+}
+.mode-toggle::before {
+  content: "Computer";
+  position: absolute;
+  color: black;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: left 1s ease;
+}
+.mode-toggle:not(:disabled):hover::before {
+  background-color: rgb(240, 240, 240);
+}
+
+.mode-toggle:not(:disabled):active::before {
+  background-color: rgba(200, 200, 200);
+}
+
+.mode-toggle.active::before {
+  left: 0;
+}
+
+.mode-toggle:disabled::before {
+  background-color: rgb(121, 121, 121);
+}
+
+/* ----------- */
+/* TIC TAC TOE */
+/* ----------- */
+
+.ttt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.cell {
+  background-color: var(--clr-player, var(--clr-surface));
+  border-radius: var(--radius-sm);
+}
+.cell.disabled {
+  background-color: var(--clr-disabled);
+}
+.cell:first-child {
+  border-top-left-radius: var(--radius-lg);
+}
+.cell:last-child {
+  border-bottom-right-radius: var(--radius-lg);
+}
+.cell:nth-child(3) {
+  border-top-right-radius: var(--radius-lg);
+}
+.cell:nth-child(7) {
+  border-bottom-left-radius: var(--radius-lg);
+}

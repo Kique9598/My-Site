@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enrique Alverde</title>
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/314c2e3e5f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper fixed">
+      <header>
+        <span class="logo"><a href="index.html">Enrique Alverde</a></span>
+        <button id="nav-toggle" class="x-sm" onclick="nav_toggle()">=</button>
+        <nav>
+          <ul>
+            <li><a href="#">About Me</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="games.html">Games</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <section id="hero"></section>
+    <section id="projects">
+      <h1>projects</h1>
+      <div class="card">
+        <a href="https://sealverde.com" target="_blank" class="container">
+          <img src="images/Screenshot 2025-01-24 113414.png" alt="image" />
+        </a>
+        <div class="content">
+          <a href="https://sealverde.com" target="_blank" style="text-decoration: none;"
+            ><h2>
+              Sealverde.com <span style="font-size: 0.75rem">&#x1F517;</span>
+            </h2></a
+          >
+          <p>
+            This is a website I made from scratch for my little sister Sofia.
+            She is an actress who needed a way to market herself, her skills,
+            and her experience. So I went ahead and created a website who's
+            design reflects her personal style in a comprehensive and simple
+            way.
+          </p>
+          <div class="wrapper tools">
+            <i class="fa-brands fa-html5 fa-xl"></i>
+            <i class="fa-brands fa-css3 fa-xl"></i>
+            <i class="fa-brands fa-js fa-xl"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const main = () => {
+        console.log(
+          "\nHello World!\n\nWelcome to my digital home. I hope you find everything you are looking for, and have fun along the way."
+        );
+      };
+
+      const five = document.querySelector('[data-id="five-server"]');
+      if (five) {
+        five.addEventListener("connected", main);
+      } else {
+        window.addEventListener("load", main);
+      }
+    </script>
+  </body>
+</html>

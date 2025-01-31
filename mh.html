@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monte Hall</title>
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mh.css" />
+    <script src="script.js" defer></script>
+    <script src="mh.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/314c2e3e5f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper fixed">
+      <header>
+        <a href="games.html"><i class="fa-solid fa-arrow-left fa-xl"></i></a>
+        <h2>Monty Hall</h2>
+      </header>
+    </div>
+    <section id="hero">
+      <div class="game-container | fill flex col">
+        <!-- Player Display Section -->
+        <div class="player-display | flex space-between">
+          <button class="player-score | selected | fill flex space-between">
+            <span class="player-symbol">X</span>
+            <span class="score">-</span>
+          </button>
+          <button class="player-score | fill flex space-between">
+            <span class="player-symbol">O</span>
+            <span class="score">-</span>
+          </button>
+        </div>
+
+        <!-- Turn Indicator -->
+        <div class="turn-indicator | center">X Turn</div>
+
+        <!-- Game Board -->
+        <div class="game-board | square br">
+          <!-- Board cells will be added dynamically or with 9 div elements -->
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel | flex">
+          <button class="mode-toggle | fill">2 Player</button>
+          <button class="reset-btn | fill">Reset</button>
+        </div>
+      </div>
+
+      <!-- <div class="game">
+        <div class="playable">
+          <div class="results">
+            <p>Wins:</p>
+            <p>Losses:</p>
+          </div>
+          <div class="board">
+            <div class="door"></div>
+            <div class="door"></div>
+            <div class="door"></div>
+          </div>
+        </div>
+        <div class="settings">
+          <button id="reset" disabled>Reset</button>
+        </div>
+      </div> -->
+    </section>
+  </body>
+</html>

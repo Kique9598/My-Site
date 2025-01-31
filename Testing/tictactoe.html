@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="flex align-center">LOGO</header>
+    <section class="game-screen">
+      <div class="game-container | flex col width-fill">
+        <!-- Player Score Board -->
+        <div class="players | flex">
+          <button
+            type="button"
+            id="player1Tag"
+            class="player-score | width-fill flex space-between"
+            aria-label="Player X Score"
+          >
+            <span class="symbol">X</span>
+            <span id="player1Score" class="score">-</span>
+          </button>
+          <button
+            type="button"
+            id="player2Tag"
+            class="player-score | width-fill flex space-between"
+            aria-label="Player O Score"
+          >
+            <span class="symbol">O</span>
+            <span id="player2Score" class="score">-</span>
+          </button>
+        </div>
+
+        <!-- Game board -->
+        <!-- TIC TAC TOE -->
+        <div class="game-board | square">
+          <div class="ttt-grid">
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+            <div class="cell | square"></div>
+          </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel | flex">
+          <button
+            type="button"
+            id="modeToggleBtn"
+            class="mode-toggle | control-btn | width-fill"
+          >
+            2 Player
+          </button>
+          <button
+            type="button"
+            id="resetBtn"
+            class="control-btn | width-fill"
+            disabled
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="tictactoe.js"></script>
+  </body>
+</html>

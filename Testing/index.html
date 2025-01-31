@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="flex align-center">LOGO</header>
+    <section class="game-screen">
+      <div class="game-container | flex col width-fill">
+        <!-- Player Score Board -->
+        <div class="players | flex">
+          <button
+            type="button"
+            id="player1Tag"
+            class="player-score | selected blue | width-fill flex space-between"
+            aria-label="Player X Score"
+          >
+            <span class="symbol">X</span>
+            <span id="player1Score" class="score">-</span>
+          </button>
+          <button
+            type="button"
+            id="player2Tag"
+            class="player-score | width-fill flex space-between"
+            aria-label="Player O Score"
+          >
+            <span class="symbol">O</span>
+            <span id="player2Score" class="score">-</span>
+          </button>
+        </div>
+
+        <!-- User Game Stats -->
+        <div class="stats | flex">
+          <div class="stat-display | width-fill flex space-between">
+            <span class="label">Wins</span>
+            <span id="user-win-score" class="value">-</span>
+          </div>
+          <div class="stat-display | width-fill flex space-between">
+            <span class="label">Losses</span>
+            <span id="user-loss-score" class="value">-</span>
+          </div>
+        </div>
+
+        <!-- Game board -->
+        <div class="game-board | square">
+
+        <!-- Control Panel -->
+        <div class="control-panel | flex">
+          <button
+            type="button"
+            id="modeToggleBtn"
+            class="mode-toggle | control-btn | width-fill"
+          >
+            2 Player
+          </button>
+          <button
+            type="button"
+            id="resetBtn"
+            class="control-btn | width-fill"
+            disabled
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="game.js"></script>
+  </body>
+</html>

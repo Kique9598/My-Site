@@ -1,0 +1,37 @@
+:root {
+    --clr-acc-1: #c3a53c;
+    --clr-acc-2: #58758c;
+    --clr-acc-2d: #43586a;
+    --cell_size: 35px;
+}
+.board {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 5px;
+    gap: 10px;
+    background-color: var(--clr-acc-2);
+}
+.row {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+}
+.cell{
+    border: 1px solid var(--color, var(--clr-acc-2d));
+    border-radius: var(--br-round);
+    width: var(--cell_size);
+    height: var(--cell_size);
+}
+.checkpoint_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+.checkpoint {
+    width: calc(var(--cell_size) / 2);
+    height: calc(var(--cell_size) / 2);
+    border-radius: var(--br-round);
+    background-color: var(--clr-acc-2d);
+}

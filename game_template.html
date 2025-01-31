@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Template</title>
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="game_template.css" />
+    <script src="script.js" defer></script>
+    <script src="game_template.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/314c2e3e5f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper fixed">
+      <header>
+        <a href="games.html"><i class="fa-solid fa-arrow-left fa-xl"></i></a>
+        <h2>Template</h2>
+      </header>
+    </div>
+    <section id="hero">
+      <div class="game-container | fill flex col">
+        <!-- User Display Section -->
+        <div class="player-display | flex space-between">
+          <button id="userW" class="user-score | fill flex space-between">
+            <span>Wins</span>
+            <span id="winScore" class="score">-</span>
+          </button>
+          <button id="userL" class="user-score | fill flex space-between">
+            <span>Loss</span>
+            <span id="lossScore" class="score">-</span>
+          </button>
+        </div>
+
+        <!-- Player Display Section -->
+        <div class="player-display | flex space-between">
+          <button
+            id="player1"
+            class="player-score | fill flex space-between"
+            disabled
+          >
+            <span>X</span>
+            <span id="player1Score" class="score">-</span>
+          </button>
+          <button id="player2" class="player-score | selected | fill flex space-between">
+            <span>O</span>
+            <span id="player2Score" class="score">-</span>
+          </button>
+        </div>
+
+        <!-- Turn Indicator -->
+        <div id="turnDisplay" class="turn-indicator | center">X Turn</div>
+
+        <!-- Game Board -->
+        <div class="game-board | square br">
+          <!-- Board cells will be added dynamically or with 9 div elements -->
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel | flex">
+          <button id="modeToggle" class="mode-toggle | fill">2 Player</button>
+          <button id="resetButton" class="reset-btn | fill">Reset</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tik Tac Toe</title>
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ttt.css" />
+    <script src="script.js" defer></script>
+    <script src="ttt.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/314c2e3e5f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper fixed">
+      <header>
+        <a href="games.html"><i class="fa-solid fa-house fa-xl"></i></a>
+        <h2>Tic Tac Toe</h2>
+      </header>
+    </div>
+    <section id="hero">
+      <div class="game">
+        <div class="grid">
+          <button class="cell"></button><button class="cell"></button
+          ><button class="cell"></button><button class="cell"></button
+          ><button class="cell"></button><button class="cell"></button
+          ><button class="cell"></button><button class="cell"></button
+          ><button class="cell"></button>
+        </div>
+        <div class="settings">
+          <button id="player-toggle" title="Change Playing Style">
+            2 Player
+          </button>
+          <button id="reset" disabled>Reset</button>
+          <div id="player_info"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

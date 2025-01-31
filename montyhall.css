@@ -1,0 +1,56 @@
+.door {
+  aspect-ratio: 1 / 2.5;
+  position: relative;
+  background-image: url(images/red_door.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.door.open {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 4px var(--clr-500);
+  background-image: none;
+}
+
+.door.open::after {
+    display: none;
+}
+
+.door::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.1s ease;
+}
+
+.door:hover::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.door:active::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.door.car::before,
+.door.goat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.door.car::before {
+  background-image: url(images/car.png);
+}
+
+.door.goat::before {
+  background-image: url(images/goat.png);
+}

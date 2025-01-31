@@ -1,0 +1,103 @@
+body {
+}
+
+#hero {
+  display: grid;
+  place-items: center;
+}
+
+#hero .wrapper,
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.grid {
+  display: grid;
+  place-content: center;
+  gap: 4vw;
+  grid-template-columns: repeat(3, 10vh);
+}
+
+.grid button {
+  aspect-ratio: 1;
+}
+
+.blue {
+  background-color: rgb(163, 226, 235) !important;
+}
+
+.red {
+  background-color: rgb(235, 163, 163) !important;
+}
+
+.settings {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: inherit;
+}
+
+#player-toggle {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 1s ease;
+}
+
+#player-toggle::before {
+  content: "Computer";
+  position: absolute;
+  color: black;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: left 1s ease;
+}
+
+#player-toggle:not(:disabled):hover::before {
+  background-color: rgb(240, 240, 240);
+}
+
+#player-toggle:not(:disabled):active::before {
+  background-color: rgba(200, 200, 200);
+}
+
+#player-toggle.active::before {
+  left: 0;
+}
+
+#player-toggle:disabled::before {
+  background-color: rgb(121, 121, 121);
+}
+
+#player_info {
+  height: 2rem;
+  width: 2rem;
+  background-color: rgb(23, 23, 26);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+  display: grid;
+  place-items: center;
+}
+
+.winner::after {
+  content: "\2655";
+  color: black;
+}
+
+@media screen and (min-width: 430px) {
+  .grid {
+    gap: 2vw;
+    grid-template-columns: repeat(3, 14vh);
+  }
+  .settings {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}

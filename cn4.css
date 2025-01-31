@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 4.5vw);
+  grid-template-rows: repeat(6, 4.5vw);
+}
+
+.cell {
+  height: 100%;
+  width: 100%;
+  background-color: var(--clr-500);
+  position: relative;
+}
+
+.cell:nth-child(1) {
+    border-top-left-radius: 10px;
+}
+.cell:nth-child(7) {
+    border-top-right-radius: 10px;
+}
+
+.cell:nth-child(36) {
+    border-bottom-left-radius: 10px;
+}
+.cell:nth-child(42) {
+    border-bottom-right-radius: 10px;
+}
+
+.cell::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #111212;
+  width: 75%;
+  border-radius: 9999px;
+  aspect-ratio: 1 / 1;
+}
